@@ -9,15 +9,15 @@ interface Props {
 const PriceInfoCard = ({ title, iconSrc, value }: Props) => {
   return (
     <div className={`price-info_card`}>
-      <p className="text-base text-black-100">{title}</p>
+      <p className="text-base text-white">{title}</p>
 
       <div className="flex gap-1">
         <Image src={iconSrc} alt={title} width={24} height={24} />
 
-        <p className="text-2xl font-bold text-secondary">{value}</p>
+        <p className="text-2xl font-bold text-white">{value}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PriceInfoCard
+export default PriceInfoCard;

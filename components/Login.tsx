@@ -29,8 +29,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md space-y-8 rounded-xl bg-white p-10 shadow-lg">
+    <div className="flex min-h-screen items-center justify-center bg-gray-900">
+      <div className="w-full max-w-md space-y-8 rounded-xl bg-gray-800 p-10 shadow-lg">
         <div className="text-center">
           <Image
             src="/assets/icons/logo.svg"
@@ -39,7 +39,7 @@ const Login = () => {
             height={150}
             className="mx-auto"
           />
-          <h2 className="mt-6 text-3xl font-bold text-gray-900">
+          <h2 className="mt-6 text-3xl font-bold text-white">
             Welcome to PriceWise
           </h2>
         </div>
@@ -55,7 +55,7 @@ const Login = () => {
                 name="username"
                 type="text"
                 required
-                className="relative block w-full rounded-md border p-3"
+                className="relative block w-full rounded-md border p-3 bg-gray-700 text-white"
                 placeholder="Username"
                 onChange={(e) => setCredentials({...credentials, username: e.target.value})}
               />
@@ -69,7 +69,7 @@ const Login = () => {
                 name="password"
                 type="password"
                 required
-                className="relative block w-full rounded-md border p-3"
+                className="relative block w-full rounded-md border p-3 bg-gray-700 text-white"
                 placeholder="Password"
                 onChange={(e) => setCredentials({...credentials, password: e.target.value})}
               />

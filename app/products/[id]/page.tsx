@@ -1,7 +1,7 @@
 import Modal from "@/components/Modal";
 import PriceInfoCard from "@/components/PriceInfoCard";
 import ProductCard from "@/components/ProductCard";
-import { getProductById, getSimilarProducts } from "@/lib/actions"
+import { getProductById, getSimilarProducts } from "@/lib/actions";
 import { formatNumber } from "@/lib/utils";
 import { Product } from "@/types";
 import Image from "next/image";
@@ -9,8 +9,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 type Props = {
-  params: { id: string }
-}
+  params: { id: string };
+};
+
 const ProductDetails = async ({ params }: { params: { id: string } }) => {
   const { id } = await params; // Ensure params is awaited
   const product: Product = await getProductById(id);
@@ -34,14 +35,14 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
         <div className="flex-1 flex flex-col">
           <div className="flex justify-between items-start gap-5 flex-wrap pb-6">
             <div className="flex flex-col gap-3">
-              <p className="text-[28px] text-secondary font-semibold">
+              <p className="text-[28px] text-white font-semibold">
                 {product.title}
               </p>
 
               <Link
                 href={product.url}
                 target="_blank"
-                className="text-base text-black opacity-50"
+                className="text-base text-white opacity-50"
               >
                 Visit Product
               </Link>
@@ -61,7 +62,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                 </p>
               </div>
 
-              <div className="p-2 bg-white-200 rounded-10">
+              <div className="p-2 bg-gray-700 rounded-10">
                 <Image
                   src="/assets/icons/bookmark.svg"
                   alt="bookmark"
@@ -70,7 +71,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                 />
               </div>
 
-              <div className="p-2 bg-white-200 rounded-10">
+              <div className="p-2 bg-gray-700 rounded-10">
                 <Image
                   src="/assets/icons/share.svg"
                   alt="share"
@@ -83,10 +84,10 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
 
           <div className="product-info">
             <div className="flex flex-col gap-2">
-              <p className="text-[34px] text-secondary font-bold">
+              <p className="text-[34px] text-white font-bold">
                 {product.currency} {formatNumber(product.currentPrice)}
               </p>
-              <p className="text-[21px] text-black opacity-50 line-through">
+              <p className="text-[21px] text-white opacity-50 line-through">
                 {product.currency} {formatNumber(product.originalPrice)}
               </p>
             </div>
@@ -112,15 +113,15 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                     width={16}
                     height={16}
                   />
-                  <p className="text-sm text-secondary font-semibold">
+                  <p className="text-sm text-white font-semibold">
                     {product.reviewsCount} Reviews
                   </p>
                 </div>
               </div>
 
-              <p className="text-sm text-black opacity-50">
+              <p className="text-sm text-white opacity-50">
                 <span className="text-primary-green font-semibold">93% </span> of
-                buyers have recommeded this.
+                buyers have recommended this.
               </p>
             </div>
           </div>
@@ -156,7 +157,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
 
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-5">
-          <h3 className="text-2xl text-secondary font-semibold">
+          <h3 className="text-2xl text-white font-semibold">
             Product Description
           </h3>
 
@@ -191,7 +192,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ProductDetails
+export default ProductDetails;
