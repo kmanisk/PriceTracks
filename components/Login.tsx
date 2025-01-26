@@ -34,13 +34,13 @@ const Login = () => {
         <div className="text-center">
           <Image
             src="/assets/icons/logo.svg"
-            alt="PriceWise Logo"
+            alt="PricePal Logo"
             width={150}
             height={150}
             className="mx-auto"
           />
           <h2 className="mt-6 text-3xl font-bold text-white">
-            Welcome to PriceWise
+            Welcome to PricePal
           </h2>
         </div>
 
