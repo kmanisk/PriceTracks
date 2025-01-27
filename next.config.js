@@ -28,6 +28,10 @@ const nextConfig = {
         hostname: 'm.media-amazon.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: "**",
+      }
     ],
   },
 }

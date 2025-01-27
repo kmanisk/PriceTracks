@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",       // Pages inside 'src'
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}", // Components inside 'src'
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",        // App directory inside 'src'
+    // "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    // "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    // "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -42,3 +45,6 @@ module.exports = {
   },
   plugins: [],
 };
+
+
+
