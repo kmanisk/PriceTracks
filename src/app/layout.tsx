@@ -1,13 +1,14 @@
 import Navbar from '@/components/Navbar'
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
-const spaceGrotesk = Space_Grotesk({  
-  subsets: ['latin'], 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700']
- })
+})
 
 export const metadata: Metadata = {
   title: 'PricePal',
@@ -20,11 +21,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <main className="max-w-10xl mx-auto">
-          <Navbar />
-          {children}
+          <ThemeProvider attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+            {children}
+          </ThemeProvider>
         </main>
       </body>
     </html>

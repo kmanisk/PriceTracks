@@ -27,7 +27,7 @@ const HomePage = async () => {
               <span className="text-blue-400">Pal</span>
             </h1>
 
-            <p className="mt-6 text-white">
+            <p className="mt-6">
               Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
             </p>
 
