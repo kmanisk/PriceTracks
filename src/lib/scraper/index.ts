@@ -2,10 +2,10 @@
 
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import { extractCurrency, extractDescription, extractPrice } from '../utils';
+import { extractCurrency, extractDescription, extractPrice } from '../price';
 
 export async function scrapeAmazonProduct(url: string) {
-  if(!url) return;
+  if (!url) return;
 
   // BrightData proxy configuration
   const username = String(process.env.BRIGHT_DATA_USERNAME);
@@ -46,8 +46,8 @@ export async function scrapeAmazonProduct(url: string) {
 
     const outOfStock = $('#availability span').text().trim().toLowerCase() === 'currently unavailable';
 
-    const images = 
-      $('#imgBlkFront').attr('data-a-dynamic-image') || 
+    const images =
+      $('#imgBlkFront').attr('data-a-dynamic-image') ||
       $('#landingImage').attr('data-a-dynamic-image') ||
       '{}'
 
@@ -69,7 +69,7 @@ export async function scrapeAmazonProduct(url: string) {
       priceHistory: [],
       discountRate: Number(discountRate),
       category: 'category',
-      reviewsCount:100,
+      reviewsCount: 100,
       stars: 4.5,
       isOutOfStock: outOfStock,
       description,
