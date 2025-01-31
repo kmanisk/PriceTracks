@@ -6,9 +6,14 @@ import Login from "@/components/Login";
 export default async function Home() {
   const session = await getServerSession(authOptions);
 
-//   if (!session) {
-//     return <Login />;
-//   }
+  //   if (!session) {
+  //     return <Login />;
+  //   }
 
-  return <HomePage />;
+  return (
+    <main>
+      <HomePage />
+    </main>
+  );
+
 }

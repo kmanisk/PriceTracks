@@ -1,6 +1,7 @@
+import { Button } from "./ui/button";
+import { Card } from "./ui/card";
+import { Input } from "./ui/input";
 import HeroCarousel from "@/components/HeroCarousel";
-import Searchbar from "@/components/Searchbar";
-import Image from "next/image";
 import { getAllProducts } from "@/lib/actions";
 import ProductCard from "@/components/ProductCard";
 
@@ -12,16 +13,6 @@ const HomePage = async () => {
       <section className="px-6 md:px-20 py-24">
         <div className="flex max-xl:flex-col gap-16">
           <div className="flex flex-col justify-center">
-            {/* <p className="small-text">
-              Smart Shopping Starts Here:
-              <Image
-                src="/assets/icons/arrow-right.svg"
-                alt="arrow-right"
-                width={16}
-                height={16}
-              />
-            </p> */}
-
             <h1 className="head-text">
               Price
               <span className="text-blue-400">Pal</span>
@@ -31,13 +22,21 @@ const HomePage = async () => {
               Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
             </p>
 
-            <Searchbar />
+            {/* Custom Input for Search */}
+            <Input
+              placeholder="Search products..."
+              className="mt-6 p-4 rounded-md border border-gray-300"
+            />
+
+            {/* Custom Button */}
+            <Button className="mt-4">Explore</Button>
           </div>
 
           <HeroCarousel />
         </div>
       </section>
 
+      {/* Trending Section (Unchanged) */}
       <section className="trending-section">
         <h2 className="section-text">Trending</h2>
 

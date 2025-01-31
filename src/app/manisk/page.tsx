@@ -1,7 +1,9 @@
 'use client';
 import { useState } from 'react';
 import parse from 'html-react-parser';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'; // ShadCN Button
+import { Input } from '@/components/ui/input'; // ShadCN Input
+import { Card } from '@/components/ui/card'; // ShadCN Card
 
 export default function Home() {
 	const [price, setPrice] = useState<string>('');
@@ -53,24 +55,22 @@ export default function Home() {
 
 	return (
 		<div className="min-h-screen p-4 flex flex-col items-center gap-4">
-			<Button>Click me</Button>
-			<input
-				type="text"
+			<Input
 				value={url}
 				onChange={(e) => setUrl(e.target.value)}
 				placeholder="Enter Flipkart product URL"
-				className="w-full max-w-2xl px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+				className="w-full max-w-2xl"
 			/>
 
-			<button
+			<Button
 				onClick={handleClick}
-				className="bg-primary text-white px-6 py-3 rounded-lg"
+				className="w-full max-w-2xl bg-primary px-6 py-3 rounded-lg"
 			>
 				Get Product Details
-			</button>
+			</Button>
 
 			{(price || productName || rating || ratingCount) && (
-				<div className="bg-white-100 p-6 rounded-lg shadow max-w-2xl w-full">
+				<Card className="w-full max-w-2xl p-6 mt-6">
 					{productName && (
 						<h2 className="text-xl font-bold mb-4">{productName}</h2>
 					)}
@@ -85,7 +85,7 @@ export default function Home() {
 					{ratingCount && (
 						<div className="text-gray-600">{ratingCount}</div>
 					)}
-				</div>
+				</Card>
 			)}
 		</div>
 	);

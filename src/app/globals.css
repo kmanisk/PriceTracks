@@ -172,11 +172,11 @@
 
   /* NAVBAR */
   .nav {
-    @apply flex justify-between items-center px-6 md:px-20 py-4;
+    /* @apply flex justify-between items-center px-6 md:px-20 py-4; */
   }
 
   .nav-logo {
-    @apply font-spaceGrotesk text-[21px] text-gray-400 font-bold;
+    /* @apply font-spaceGrotesk text-[21px] text-gray-400 font-bold; */
   }
 
   /* PRICE INFO */
@@ -226,3 +226,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* .hero-carousel img {
+  pointer-events: none;
+} */
