@@ -7,6 +7,8 @@ import { Product } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { Heart, Bookmark, Share2, Star, MessageCircle, ShoppingBag, ChevronUp, ChevronDown, BarChart2 } from 'lucide-react';
+
 
 type Props = {
   params: { id: string };
@@ -35,14 +37,14 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
         <div className="flex-1 flex flex-col">
           <div className="flex justify-between items-start gap-5 flex-wrap pb-6">
             <div className="flex flex-col gap-3">
-              <p className="text-[28px] text-white font-semibold">
+              <p className="text-[28px]  font-semibold">
                 {product.title}
               </p>
 
               <Link
                 href={product.url}
                 target="_blank"
-                className="text-base text-white opacity-50"
+                className="text-base  opacity-50"
               >
                 Visit Product
               </Link>
@@ -62,6 +64,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                 </p>
               </div>
 
+              {/* this is the elements buttons  */}
               <div className="p-2 bg-gray-700 rounded-10">
                 <Image
                   src="/assets/icons/bookmark.svg"
@@ -84,10 +87,10 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
 
           <div className="product-info">
             <div className="flex flex-col gap-2">
-              <p className="text-[34px] text-white font-bold">
+              <p className="text-[34px]  font-bold">
                 {product.currency} {formatNumber(product.currentPrice)}
               </p>
-              <p className="text-[21px] text-white opacity-50 line-through">
+              <p className="text-[21px]  opacity-50 line-through">
                 {product.currency} {formatNumber(product.originalPrice)}
               </p>
             </div>
@@ -113,13 +116,13 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                     width={16}
                     height={16}
                   />
-                  <p className="text-sm text-white font-semibold">
+                  <p className="text-sm  font-semibold">
                     {product.reviewsCount} Reviews
                   </p>
                 </div>
               </div>
 
-              <p className="text-sm text-white opacity-50">
+              <p className="text-sm  opacity-50">
                 <span className="text-primary-green font-semibold">93% </span> of
                 buyers have recommended this.
               </p>
@@ -157,7 +160,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
 
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-5">
-          <h3 className="text-2xl text-white font-semibold">
+          <h3 className="text-2xl  font-semibold">
             Product Description
           </h3>
 
@@ -174,7 +177,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
             height={22}
           />
 
-          <Link href="/" className="text-base text-white">
+          <Link href="/" className="text-base ">
             Buy Now
           </Link>
         </button>

@@ -183,7 +183,8 @@ const Navbar = () => {
   }
 
   return (
-    <header className="w-full bg-white dark:bg-gray-900 shadow-md">
+    //<header className="w-full bg-white dark:bg-gray-900 shadow-md">
+    <header className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-md z-50">
       {/* Full-width nav */}
       <nav className="flex justify-between items-center px-6 py-3 w-full">
 
@@ -225,3 +226,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

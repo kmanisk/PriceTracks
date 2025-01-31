@@ -54,7 +54,7 @@ const Modal = ({ productId }: Props) => {
               className="inline-block h-screen align-middle"
               aria-hidden="true"
             />
-            
+
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -134,3 +134,4 @@ const Modal = ({ productId }: Props) => {
 }
 
 export default Modal
+

@@ -34,6 +34,20 @@ const nextConfig = {
       }
     ],
   },
+// Add caching headers globally for API routes (if needed)
+  async headers() {
+    return [
+      {
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600', // Cache API responses for 1 hour
+          },
+        ],
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig
