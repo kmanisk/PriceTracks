@@ -24,7 +24,8 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={inter.className}>
-          <main className="max-w-10xl mx-auto">
+          {/* create push the content below for pacing accommodation for navbar */}
+          <main className="max-w-10xl mx-auto pt-16">
             <ThemeProvider attribute="class"
               defaultTheme="system"
               enableSystem
@@ -36,6 +37,6 @@ export default function RootLayout({
           </main>
         </body>
       </html>
-      </ClerkProvider>
-      )
+    </ClerkProvider>
+  )
 }

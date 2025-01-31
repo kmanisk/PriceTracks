@@ -27,29 +27,32 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-md z-50">
+      {/* <header className="fixed top-0 left-0 w-full h-16 bg-white dark:bg-gray-900 shadow-md z-50 pointer-events-auto"> */}
+
       {/* Full-width nav */}
-      <nav className="flex justify-between items-center px-6 py-3 w-full">
+      {/* here the py2 defines its height of navbar */}
+      < nav className="flex justify-between items-center px-6 py-2 w-full" >
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        < Link href="/" className="flex items-center gap-2" >
           <span className="text-2xl font-bold">
             Price<span className="text-blue-500">Pal</span>
           </span>
-        </Link>
+        </Link >
 
         {/* Right side icons */}
-        <div className="flex items-center gap-4">
+        < div className="flex items-center gap-4" >
           {/* Search Icon */}
-          <Search className="h-5 w-5 cursor-pointer text-gray-700 dark:text-white" />
+          < Search className="h-5 w-5 cursor-pointer text-gray-700 dark:text-white" />
 
           {/* Heart (Favorite) Icon */}
-          <Heart className="h-5 w-5 cursor-pointer text-gray-700 dark:text-white" />
+          < Heart className="h-5 w-5 cursor-pointer text-gray-700 dark:text-white" />
 
           {/* User Icon */}
-          <User className="h-5 w-5 cursor-pointer text-gray-700 dark:text-white" />
+          < User className="h-5 w-5 cursor-pointer text-gray-700 dark:text-white" />
 
           {/* Dark/Light Mode Toggle Button */}
-          <Button
+          < Button
             variant="outline"
             size="icon"
             onClick={toggleTheme}
@@ -60,11 +63,11 @@ const Navbar = () => {
             ) : (
               <Moon className="h-4 w-4 text-gray-800 dark:text-white" />
             )}
-          </Button>
+          </Button >
           {/* if user is signedout then show sign in button  */}
-          <SignedOut>
+          < SignedOut >
             <SignInButton mode="modal" />
-          </SignedOut>
+          </SignedOut >
 
 
           {/* if user signin then show signout button only */}
@@ -72,10 +75,10 @@ const Navbar = () => {
             {/* <UserButton /> */}
             <Link href="user-profile">Profile</Link>
             <SignOutButton />
-          </SignedIn>
-        </div>
-      </nav>
-    </header>
+          </SignedIn >
+        </div >
+      </nav >
+    </header >
   );
 };
 export default Navbar;

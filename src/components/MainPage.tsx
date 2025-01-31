@@ -4,7 +4,8 @@ import { Input } from "./ui/input";
 import HeroCarousel from "@/components/HeroCarousel";
 import { getAllProducts } from "@/lib/actions";
 import ProductCard from "@/components/ProductCard";
-
+import Searchbar from "./Searchbar";
+import RedirectButton from "./Redirect";
 const HomePage = async () => {
   const allProducts = await getAllProducts();
 
@@ -22,14 +23,16 @@ const HomePage = async () => {
               Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
             </p>
 
-            {/* Custom Input for Search */}
-            <Input
+            {/* shadcn ui componnete */}
+            {/* <Input
               placeholder="Search products..."
               className="mt-6 p-4 rounded-md border border-gray-300"
-            />
+            /> */}
 
-            {/* Custom Button */}
-            <Button className="mt-4">Explore</Button>
+            {/* <Button className="mt-4">Explore</Button> */}
+            <Searchbar />
+            {/* <RedirectButton /> */}
+
           </div>
 
           <HeroCarousel />
@@ -49,5 +52,4 @@ const HomePage = async () => {
     </>
   );
 };
-
 export default HomePage;
